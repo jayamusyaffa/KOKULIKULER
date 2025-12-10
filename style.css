@@ -1,0 +1,235 @@
+/* Gaya Umum */
+
+:root {
+    --primary-color: #ff9900; /* Neon Green */
+    --secondary-color: #f7f7f7;
+    --background-color: #0d1117;
+    --card-background: #161b22;
+    --border-color: #30363d;
+    --font-family-code: 'Fira Code', 'Courier New', monospace;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6e6d1; /* Krem Muda Pudar */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%; /* Lebar lebih besar agar gambar muat */
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header dan Navigasi */
+header {
+    background: #6b3e26; /* Cokelat Gelap */
+    color: white;
+    padding-top: 10px;
+    min-height: 70px;
+    border-bottom: #f28c28 5px solid; /* Oranye Cemerlang */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: #ffcc99; /* Kuning Pudar saat dihover */
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header h1 {
+    float: left;
+    margin: 0;
+    font-size: 2.2em;
+}
+
+/* BAGIAN HERO */
+.hero {
+    background: linear-gradient(to right, #f2a66e, #ffcc99); /* Gradient Meriah */
+    color: #5d2600;
+    padding: 80px 0;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text {
+    flex-basis: 55%;
+    padding-right: 20px;
+}
+
+.btn-n {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--primary-color);
+    border-radius: 40px;
+    box-shadow: 0 0 10px var(--primary-color);
+    font-size: 1rem;
+    color: var(--background-color);
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.5s ease;
+}
+
+.hero-image {
+    flex-basis: 40%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.hero button {
+    padding: 12px 25px;
+    background: #e8491d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 25px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.hero button:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* BAGIAN KONTEN BERGAMBAR (MEDIA BLOCK) */
+.content-section {
+    padding: 30px;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.media-block .container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.text-content {
+    flex-basis: 60%;
+}
+
+.image-content {
+    flex-basis: 40%;
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.image-content img:hover {
+    transform: scale(1.03); /* Efek zoom saat di hover */
+}
+
+/* Pengaturan tata letak Kiri-Kanan */
+.left-aligned .container {
+    flex-direction: row; /* Teks Kiri, Gambar Kanan (Default) */
+}
+
+.right-aligned .container {
+    flex-direction: row-reverse; /* Gambar Kiri, Teks Kanan */
+}
+
+.content-section h3 {
+    color: #e8491d;
+    border-bottom: 3px solid #ffcc99;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.tag-budaya {
+    font-weight: bold;
+    color: #6b3e26;
+    margin-top: 15px;
+}
+
+/* Footer */
+footer {
+    padding: 25px;
+    margin-top: 30px;
+    color: white;
+    background-color: #333;
+    text-align: center;
+}
+
+/* Responsif Sederhana (untuk tampilan mobile) */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    /* Tumpuk semua elemen (gambar di atas teks) di mobile */
+    .hero-content, .media-block .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-text, .hero-image, .text-content, .image-content {
+        flex-basis: 100%;
+        padding: 0;
+    }
+    
+    .hero-image {
+        order: -1; /* Pindahkan gambar ke atas di mobile */
+        margin-bottom: 20px;
+    }
+
+    header nav {
+        float: none;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    header li {
+        float: none;
+        display: block;
+        padding: 5px 0;
+    }
+}
